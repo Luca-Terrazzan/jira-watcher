@@ -1,5 +1,19 @@
 <html>
   <title>JIRA WATCHER</title>
-  <head>👱🏿‍♂️</head>
-  <body>🦵</body>
+
+  <head>
+    <h1>
+      showing 🏂 <%= boardName %>
+    </h1>
+  </head>
+
+  <body>
+    <div>
+      🐛 are
+      <% issues.forEach( issue => { %>
+        <div> <%= issue.key %> </div>
+      <% }) %>
+    </div>
+  </body>
+
 </html>

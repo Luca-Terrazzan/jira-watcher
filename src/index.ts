@@ -21,8 +21,11 @@ app.get('/', async (req, res) => {
   }
 );
 
-app.get('/board', (req, res) => {
-    res.render('index')
+app.get('/board', async (req, res) => {
+    res.render('index', {
+      boardName: (await jira.getDefectsBoard()).name,
+      issues: await jira.getDefects()
+    })
   }
 );
 

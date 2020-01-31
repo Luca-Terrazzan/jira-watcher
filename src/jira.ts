@@ -26,6 +26,12 @@ export class Jira {
     return issue;
   }
 
+  async getDefectsBoard(): Promise<{ name: string }> {
+    const board = await this.jiraConnection.board.getBoard( { boardId: 309 } );
+
+    return board;
+  }
+
   async getDefects(): Promise<Issue[]> {
     const defects = await this.jiraConnection.board.getIssuesForBoard( { boardId: 309 } );
 

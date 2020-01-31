@@ -1,4 +1,5 @@
 {
   "jira_url": "xxx.atlassian.net",
-  "jira_api_token": "xxx"
+  "jira_api_token": "xxx",
+  "port": 3000
 }

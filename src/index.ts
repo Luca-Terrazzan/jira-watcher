@@ -2,9 +2,12 @@ import { Jira } from './jira';
 import express from 'express';
 
 const app = express();
+const jira = new Jira();
 
-app.get('/', (req, res) => {
-    res.send('👍🏿👌🏿');
+app.get('/', async (req, res) => {
+    res.send(
+      await jira.getIssue('DOC-9661')
+    );
   }
 );
 

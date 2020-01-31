@@ -1,6 +1,6 @@
 import JiraClient, { Config } from 'jira-connector';
 import * as ConnectionConfig from '../config.json';
-import { Issue } from 'jira-connector/types/api';
+import { Issue, Board } from 'jira-connector/types/api';
 
 export class Jira {
 
@@ -24,6 +24,12 @@ export class Jira {
     });
 
     return issue;
+  }
+
+  async getDefects(): Promise<Issue[]> {
+    const defects = await this.jiraConnection.board.getIssuesForBoard( { boardId: 309 } );
+
+    return defects.issues;
   }
 
 }

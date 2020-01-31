@@ -5,9 +5,13 @@ const app = express();
 const jira = new Jira();
 
 app.get('/', async (req, res) => {
-    res.send(
-      await jira.getIssue('DOC-9661')
-    );
+    try {
+      res.send(
+        await jira.getDefects()
+      );
+    } catch (e) {
+      console.error('error:', e);
+    }
   }
 );
 

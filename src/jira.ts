@@ -1,5 +1,11 @@
+import JiraClient from 'jira-connector';
+
 export class Jira {
 
-  constructor(private readonly test: string) {}
+  private readonly jiraConnection: JiraClient;
+
+  constructor() {
+    this.jiraConnection = new JiraClient();
+  }
 
 }
